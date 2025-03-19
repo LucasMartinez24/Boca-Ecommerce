@@ -1,0 +1,252 @@
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+  margin-top: 150px;
+  margin-bottom: 80px;
+}
+
+.blueBg {
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+}
+
+.blueBg .box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blueBg .box h2 {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  transition: 1.8s;
+}
+
+.contenedor.active .blueBg .box h2 {
+  color: #fff;
+  transition: 1.8s;
+}
+
+.blueBg .box button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #f3b229;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.formBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+  transition: 0.7s;
+  overflow: hidden;
+}
+
+.formBx.active {
+  left: 50%;
+  transition: 0.7s;
+}
+
+.formBx .form {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 50px;
+  transition: 0.5s;
+}
+
+.formBx .signinForm {
+  transition-delay: 0.3s;
+}
+
+.formBx .signupForm {
+  left: 100%;
+  transition-delay: 0s;
+}
+
+.formBx.active .signupForm {
+  left: 0;
+  transition-delay: 0.3s;
+}
+
+.formBx.active .signinForm {
+  left: -100%;
+}
+
+.formBx .form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formBx .form form h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.formBx .form form input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+
+.formBx .form form input[type="submit"] {
+  background: #103F79;
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  cursor: pointer;
+}
+
+.formBx .form form .forgot {
+  color: #333;
+}
+
+select {
+  padding: 1px;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #333;
+  margin-bottom: 10px;
+}
+
+.google {
+  border: none;
+  position: relative;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  background-color: #4285f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+}
+
+.google:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3);
+  box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3);
+}
+
+.google:active {
+  background-color: #3367d6;
+  transition: background-color .2s;
+}
+
+.btnGoogle {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+.google .img-container img {
+  width: 20px;
+  height: 20px;
+}
+
+.google .img-container {
+  padding: 15px;
+  background: #fff;
+  width: 48px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.google .text-container {
+  font-weight: 500;
+  letter-spacing: .21px;
+  font-size: 16px;
+  line-height: 48px;
+  vertical-align: top;
+  border: none;
+  text-align: center;
+  width: 300px;
+}
+
+@media (max-width:991px) {
+  .google {
+    width: 250px;
+  }
+
+  .container {
+    max-width: 400px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .blueBg {
+    top: 0;
+    height: 100%;
+  }
+
+  .formBx {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .blueBg .box {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+  }
+
+  .box.signin {
+    top: 0;
+  }
+
+  .formBx.active {
+    left: 0;
+    top: 150px;
+  }
+
+}

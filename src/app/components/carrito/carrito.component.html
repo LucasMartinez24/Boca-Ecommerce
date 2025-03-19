@@ -1,0 +1,38 @@
+<section id="cart" class="section-p1">
+  <table width="100%">
+    <thead>
+      <tr>
+        <td>Borrar</td>
+        <td>Imagen</td>
+        <td>Producto</td>
+        <td>Precio</td>
+        <td>Cantidad</td>
+        <td>Subtotal</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart">
+        <td><a (click)="borrar(item)" class="boton"><i class="far fa-times-circle"></i></a></td>
+        <td><img [src]="item.product.imagen" alt="muestra"></td>
+        <td>{{ item.product.nombre }}</td>
+        <td>{{ item.product.precio | currency }}</td>
+        <td><input type="number" id="myInput" [(ngModel)]="item.quantity" min="1" (input)="updateTotalPrice(item)"></td>
+        <td>{{ ((item.product.precio || 0) * item.quantity) | currency }}</td>
+      </tr>
+      <p *ngIf="cart.length==0" style="margin-top: 20px;">No hay Productos en su carrito</p>
+    </tbody>
+  </table>
+</section>
+<section id="cart-add" class="section-p1">
+  <div id="subTotal">
+    <h3>Cart total</h3>
+    <table>
+
+      <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>{{calculateSubtotal()|currency}}</strong></td>
+      </tr>
+    </table>
+    <button (click)="generatePreference()" type="submit">Comprar</button>
+  </div>
+</section>

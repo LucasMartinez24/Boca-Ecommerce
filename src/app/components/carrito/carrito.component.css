@@ -1,0 +1,182 @@
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+#cart table {
+  margin-top: 90px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img {
+  margin-top: 8px;
+  width: 70px;
+  border: 0.5px solid #fff;
+}
+
+#cart table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+#cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(3) {
+  width: 250px;
+  text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+  border: 1px solid #f3b229;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+  color: #f3b229;
+}
+
+#cart table tbody tr td {
+  padding-top: 15px;
+}
+
+#cart table tbody td {
+  font-size: 13px;
+  color: #f3b229;
+}
+
+#cart-add {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#subTotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #f3b229;
+  color: #f3b229;
+  padding: 30px;
+}
+
+#subTotal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#subTotal h3 {
+  padding-bottom: 15px;
+}
+
+#subTotal table td {
+  width: 50%;
+  border: 1px solid #f3b229;
+  color: #f3b229;
+  padding: 10px;
+  font-size: 13px;
+}
+
+#subTotal button {
+  background-color: #f3b229;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all .2s;
+}
+
+.boton {
+  width: 20px;
+  height: 20px;
+  color: #f3b229;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width:799px) {
+  .section-p1 {
+    padding: 40px 40px;
+  }
+
+  #cart-add {
+    flex-direction: column;
+  }
+
+  #subTotal {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #cart table {
+    table-layout: auto;
+    white-space: normal;
+  }
+
+  #cart table img {
+    margin-top: 8px;
+    width: 60px;
+    border: 0.1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  #cart table td {
+    border-left: 1px solid #e2e9e1;
+    border-bottom: 1px solid #e2e9e1;
+  }
+
+  #cart table td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+  }
+
+  #cart table td:nth-child(2) {
+    width: 100px;
+    text-align: center;
+  }
+
+  #cart table td:nth-child(3) {
+    width: 150px;
+    text-align: center;
+  }
+
+  #cart table td:nth-child(4),
+  #cart table td:nth-child(6) {
+    display: none;
+  }
+
+  #cart table td:nth-child(5) {
+    border-right: 1px solid #e2e9e1;
+  }
+
+  #cart table td:nth-child(5) input {
+    width: 50px;
+    padding: 5px 5px 5px 5px;
+  }
+}

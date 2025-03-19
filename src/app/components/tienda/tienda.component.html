@@ -1,0 +1,31 @@
+<section class="main-home">
+  <div class="text">
+    <h1>#Compra<br> desde casa</h1>
+    <p>Accesorios para Alentar(te)</p>
+  </div>
+</section>
+<section class="productos" id="products">
+  <div class="center-text">
+    <h2>Nuestros <span>Productos</span></h2>
+  </div>
+  <div class="products">
+    <div class="row" *ngFor="let item of productos">
+      <img [src]="item.imagen" alt="muestra" routerLink="/compra/{{item.id}}" *ngIf="item.disponibilidad==true">
+      <img [src]="item.imagen" alt="muestra" *ngIf="item.disponibilidad==false">
+      <div class="product-text" *ngIf="item.disponibilidad==false">
+        <h5>Agotado</h5>
+      </div>
+      <div class="ratting">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+      </div>
+      <div class="price">
+        <h4>{{item.nombre}}</h4>
+        <p>{{item.precio|currency}}</p>
+      </div>
+    </div>
+  </div>
+</section>

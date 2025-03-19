@@ -1,0 +1,52 @@
+<div class="contenedor" #body>
+  <section class="container">
+    <div class="blueBg">
+      <div class="box signin">
+        <h2>¿Ya tienes una cuenta?</h2>
+        <button class="signinBtn" #signinBtn>Iniciar sesión</button>
+      </div>
+      <div class="box signup">
+        <h2>¿No tienes una cuenta?</h2>
+        <button class="signupBtn" #signupBtn>Registrate</button>
+      </div>
+    </div>
+    <div class="formBx" #formBx>
+      <div class="form signinForm">
+        <form>
+          <h3>Iniciar sesión</h3>
+          <button class="google" (click)="Google()">
+            <div class="btnGoogle">
+              <div class="img-container">
+                <img src="../assets/img/g-logo.png" alt="google">
+              </div>
+              <div class="text-container">
+                <span> Iniciar sesión con Google</span>
+              </div>
+            </div>
+          </button>
+          <input type="email" placeholder="Email" name="emailLogin" [(ngModel)]="emailLogin">
+          <input type="password" placeholder="Password" name="passwordLogin" [(ngModel)]="passwordLogin">
+          <input type="submit" (click)="onSubmitLogin()" value="Iniciar sesión">
+        </form>
+      </div>
+      <div class="form signupForm">
+        <form>
+          <h3>Registrarse</h3>
+          <button class="google" (click)="Google()">
+            <div class="btnGoogle">
+              <div class="img-container">
+                <img src="../assets/img/g-logo.png" alt="google">
+              </div>
+              <div class="text-container">
+                <span> Registrarse con Google</span>
+              </div>
+            </div>
+          </button>
+          <input type="email" placeholder="E-mail" name="email" id="email" [(ngModel)]="email">
+          <input type="password" placeholder="Password" name="password" id="password" [(ngModel)]="password">
+          <input type="submit" (click)="onSubmitRegister()" value="Registrarse">
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

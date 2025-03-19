@@ -1,0 +1,23 @@
+<section>
+  <div class="container flex">
+    <div class="left">
+      <div class="main-image">
+        <img [src]="producto.imagen" alt="imagen">
+      </div>
+    </div>
+    <div class="right">
+      <h3>{{producto.nombre}}</h3>
+      <h4>{{producto.precio | currency}}</h4>
+      <p>{{producto.descripcion}}</p>
+      <h5>Cantidad</h5>
+      <div class="add flex1">
+        <span class="span" (click)="decrementarCantidad()">-</span>
+        <input class="label" type="number" [ngModel]="cantidad" min="1" [max]="aux" disabled>
+        <span class="span" (click)="incrementarCantidad()">+</span>
+      </div>
+      <button *ngIf="isLogged" (click)="addCart()">Agregar al carrito</button>
+      <button *ngIf="isLogged==false" (click)="boton()">Agregar carrito</button>
+      <p *ngIf="intento">Inicia sesion para agregar a tu carrito y comprar</p>
+    </div>
+  </div>
+</section>

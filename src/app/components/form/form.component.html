@@ -1,0 +1,55 @@
+
+<section>
+  <div class="container">
+    <h2>Productos</h2>
+    <form class="form" #Form="ngForm">
+      <input *ngIf="accion=='update'" required name="id" id="id" #id="ngModel" type="hidden" value="{{producto.id}}" [(ngModel)]="producto.id">
+      <div class="input-box">
+        <label>Nombre:</label>
+        <input type="text" placeholder="Ingrese el nombre del producto" id="nombre" required name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre">
+      </div>
+      <div class="input-box">
+        <label>Descripcion:</label>
+        <input type="text" placeholder="Ingrese una descripcion del producto" id="descripcion" required  name="descripcion" [(ngModel)]="producto.descripcion" #descripcion="ngModel">
+      </div>
+      <div class="input-box">
+        <label>precio:</label>
+        <input type="number" placeholder="Ingrese el precio:" id="precio" required  name="precio" [(ngModel)]="producto.precio" #precio="ngModel">
+      </div>
+      <div class="input-box">
+        <label>Cantidad disponible:</label>
+        <input type="number" placeholder="Ingrese la cantidad disponible:" id="cantidad" required  name="cantidad" [(ngModel)]="producto.cantidad" #cantidad="ngModel">
+      </div>
+      <div class="select-box">
+        <label for="disponibilidad">Disponibilidad:</label>
+        <select name="disponibilidad" id="disponibilidad" required [(ngModel)]="producto.disponibilidad" #disponibilidad="ngModel">
+          <option value="1">Si</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="select-box">
+        <label for="Oferta">Es una Oferta:</label>
+        <select name="oferta" id="oferta" required [(ngModel)]="producto.oferta" #oferta="ngModel">
+          <option value="1">Si</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="imagen" *ngIf="accion=='new'">
+        <div>
+          <label>Imagen:</label>
+          <input type="file" (change)="upload($event)" accept=".png,.jpg" placeholder="Ingrese un url de imagen" name="imagen" id="img" required>
+        </div>
+        <div class="button" #button (click)="uploadImg()">
+          <div class="cont">
+            <i class='bx bx-cloud-upload'></i>
+            <span class="button-text">Cargar img</span>
+          </div>
+        </div>
+      </div>
+      <p *ngIf="accion=='update'">imagen:</p>
+      <img *ngIf="accion=='update'" [src]="producto.imagen" alt="imagen" height="150px">
+      <button *ngIf="accion=='new' && image && Form.invalid==false" type="submit" (click)="onSubmit()">Enviar</button>
+      <button *ngIf="accion=='update'" [disabled]="Form.invalid" type="submit" (click)="modificar()">Modificar</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<div class="table">
+  <button routerLink="/formulario/0" class="agregar">Agregar Producto</button>
+  <div class="table-section">
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Botones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productos">
+          <td><img [src]="item.imagen" alt="img"></td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.precio | currency}}</td>
+          <td>
+            <button routerLink="/formulario/{{item.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button (click)="OpenModal(item)"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr *ngIf="productos.length==0">No hay Productos</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<section class="modal" *ngIf="modal==true">
+  <div class="modal_container">
+    <button class="cerrar" (click)="CloseModal()"><i class="fa-solid fa-x"></i></button>
+    <h2 class="modal_titulo">Borrar</h2>
+    <p>¿Estas segura de borrar este producto?</p>
+    <div class="botones">
+      <button (click)="borrarProducto()" class="si"><span>Si</span></button>
+      <button (click)="CloseModal()" class="no"><span>No</span></button>
+    </div>
+  </div>
+</section>

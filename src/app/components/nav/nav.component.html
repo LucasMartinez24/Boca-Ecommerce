@@ -1,0 +1,14 @@
+<nav [class.sticky]="stickyHeader">
+  <a href="#" class="logo"><img src="../assets/img/nav.png" alt=""></a>
+  <ul class="navMenu" #navmenu>
+    <li><a routerLink="/inicio">Inicio</a></li>
+    <li><a routerLink="/shop">Productos</a></li>
+  </ul>
+  <div class="nav-icons">
+    <a routerLink="/lista" *ngIf="isLogged"><i class="fa-regular fa-user"></i></a>
+    <a routerLink="/carrito" *ngIf="isLogged"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a routerLink="/login" class="login" *ngIf="!isLogged">LOGIN</a>
+    <a (click)="logOut()" class="login" *ngIf="isLogged">LogOut</a>
+    <button id="menu-icon" class="menu-icon" #menuIcon (click)="toggleMenu()"><i class='bx bx-menu'></i></button>
+  </div>
+</nav>
