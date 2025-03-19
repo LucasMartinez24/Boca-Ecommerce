@@ -47,7 +47,7 @@ export class CartService {
     this.items = [];
     this.saveCart();
   }
-  private apiUrl = 'https://encanto370.onrender.com'; // Reemplaza con la URL de tu servidor Node.js
+  private apiUrl = 'https://serverboca.onrender.com'; // Reemplaza con la URL de tu servidor Node.js
 
   cargarCarritoEnPreferencia(precio: number) {
     const orderData = {
