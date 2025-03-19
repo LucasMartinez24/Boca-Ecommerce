@@ -1,6 +1,5 @@
 export const environment={
   firebase: {
-    apiKey: "AIzaSyBbdvRl7JXOgN32pRSSsTJgf4oK-W9ppLA",
     apiKey: "AIzaSyAmgrjXoJkJl-ukeHJO5gS0i-TWR5f_-iI",
     authDomain: "encanto-c2fef.firebaseapp.com",
     projectId: "encanto-c2fef",
